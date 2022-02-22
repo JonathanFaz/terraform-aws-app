@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  webapp:
+    container_name: APP
+    build: .
+    ports:
+      - 80:3000
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_PASS: ${DB_PASS}
+      DB_USER: ${DB_USER}
+      DB_URL: ${DB_URL}
+
