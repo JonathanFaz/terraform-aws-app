@@ -2,6 +2,7 @@ const CONFIG = require('./config')
 const express = require('express');
 const Sequelize = require('sequelize')
 const app = express();
+const PORT = 3000
 app.use(express.urlencoded({ extended: false }));
 const sequelize = new Sequelize(
   CONFIG.DB_NAME,
@@ -29,8 +30,8 @@ sequelize
     }catch(err){
       console.log("Table Already Exist")
     }
-    app.listen(80, () => {
-        console.log(`Listening for requests on http://localhost:80`);
+    app.listen(PORT, () => {
+        console.log(`Listening for requests on http://localhost:${PORT}`);
     })
   })
   .catch((err) => {
